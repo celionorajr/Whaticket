@@ -77,12 +77,12 @@
     "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts start",
-	"build": "set NODE_OPTIONS=--max-old-space-size=8192 && set NODE_OPTIONS=--openssl-legacy-provider && set GENERATE_SOURCEMAP=false && react-scripts build",
-	"builddev": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts build",
-	"test": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts test",
-	"eject": "set NODE_OPTIONS=--max-old-space-size=8192 && react-scripts eject"
-  },
+  "start": "NODE_OPTIONS=--max-old-space-size=8192 react-scripts start",
+  "build": "NODE_OPTIONS='--max-old-space-size=8192 --openssl-legacy-provider' GENERATE_SOURCEMAP=false react-scripts build",
+  "builddev": "NODE_OPTIONS=--max-old-space-size=8192 react-scripts build",
+  "test": "NODE_OPTIONS=--max-old-space-size=8192 react-scripts test",
+  "eject": "NODE_OPTIONS=--max-old-space-size=8192 react-scripts eject"
+},
   "eslintConfig": {
     "extends": "react-app"
   },
