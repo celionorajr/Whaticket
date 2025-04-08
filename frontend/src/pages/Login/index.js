@@ -65,7 +65,7 @@ const Login = () => {
 
     const [user, setUser] = useState({ email: "", password: "" });
     const { handleLogin } = useContext(AuthContext);
-    const [viewregister, setviewregister] = useState('disabled');
+    const [viewregister, setviewregister] = useState('enabled');
 
     const handleChangeInput = e => {
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -137,30 +137,35 @@ const Login = () => {
                     >
                         {i18n.t("login.buttons.submit")}
                     </Button>
-                    {viewregister === "enabled" && (
-                        <Grid container>
+                    <Grid container justifyContent="space-between">
+                        {viewregister === "enabled" && (
                             <Grid item>
-                                <Link
-                                    href="#"
-                                    variant="body2"
-                                    component={RouterLink}
-                                    to="/signup"
-                                    className={classes.link}
-                                >
-                                    {i18n.t("login.buttons.register")}
-                                </Link>
-                            </Grid>
-                        </Grid>
-                    )}
-                    <Grid container justify="flex-end">
+                            <Link
+                              variant="body2"
+                              component={RouterLink}
+                              to="/signup"
+                            >
+                              {i18n.t("Não tem uma conta? Cadastre-se!")}
+                            </Link>
+                          </Grid>
+                        )}
                         <Grid item>
-                            <Link component={RouterLink} to="/forgetpsw" variant="body2" className={classes.link}>
+                            <Link
+                                component={RouterLink}
+                                to="/forgetpsw"
+                                variant="body2"
+                                className={classes.link}
+                                style={{
+                                    fontSize: "0.9rem",
+                                }}
+                            >
                                 Esqueceu sua senha?
                             </Link>
                         </Grid>
                     </Grid>
                 </form>
             </div>
+            
         </div>
     );
 };
