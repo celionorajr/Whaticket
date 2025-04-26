@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100vw",
     height: "100vh",
-    background: "black", //Cor de fundo
+    background: "white", //Cor de fundo
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
     backgroundPosition: "center",
@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: "55px 30px",
     borderRadius: "12.5px",
+    boxShadow: "-3px 6px 17px 4px rgba(0, 0, 0, 0.5)",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -175,9 +176,17 @@ const handleSendEmail = async (values) => {
               alt="Whats"
             />
           </div>
-          <Typography component="h1" variant="h5">
-            {i18n.t("Redefinir senha")}
-          </Typography>
+          <h1 style={{
+  		fontSize: "1.5rem",
+  		fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  		fontWeight: "bold",
+  		lineHeight: 1.334,
+  		letterSpacing: "0em",
+  		color: "#ff9a00"
+		}}>
+  		{i18n.t("Redefinir senha")}
+	</h1>
+
           <Formik
             initialValues={{
               email: "",
